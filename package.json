@@ -1,0 +1,26 @@
+{
+  "name": "leetcode-practise",
+  "version": "1.0.0",
+  "description": "leetcode-practise",
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "eslint": "^7.16.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsn6034/leetcode-practise.git"
+  },
+  "author": "Azuo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zsn6034/leetcode-practise/issues"
+  },
+  "homepage": "https://github.com/zsn6034/leetcode-practise#readme"
+}
