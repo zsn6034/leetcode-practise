@@ -61,7 +61,7 @@ var KthLargest = function(k, nums) {
 KthLargest.prototype.add = function(val) {
     if (this.size < this.heap.length) {
         // this.size ++;
-        this.heap[this.size ++] = val;
+        this.heap[this.size++] = val;
         if (this.size === this.heap.length) {
             // 构建小顶堆
             this.makeMinHeap();
@@ -88,32 +88,33 @@ KthLargest.prototype.makeMinHeap = function() {
 
 // 调整堆
 KthLargest.prototype.minHeapFixdown = function(i) {
-    let temp = this.heap[i];
-    let subLeft = 2 * i + 1;
+    let c = i;
+    let temp = this.heap[c];
+    let subLeft = 2 * c + 1;
     while (subLeft < this.heap.length) {
         let subRight = subLeft + 1;
         if (subRight < this.heap.length && this.heap[subLeft] > this.heap[subRight]) {
-            subLeft ++;
+            subLeft++;
         }
-        if (this.heap[subLeft] > this.heap[i]) {
+        if (this.heap[subLeft] > this.heap[c]) {
             break;
         }
-        this.heap[i] = this.heap[subLeft];
+        this.heap[c] = this.heap[subLeft];
         this.heap[subLeft] = temp;
 
-        i = subLeft;
-        subLeft = 2 * i + 1;
+        c = subLeft;
+        subLeft = 2 * c + 1;
     }
-}
+};
 /**
  * Your KthLargest object will be instantiated and called as such:
  * var obj = new KthLargest(k, nums)
  * var param_1 = obj.add(val)
  */
 
-kthLargest = new KthLargest(3, [4,5,8,2]);
-console.log(kthLargest.add(3))// return 4
-console.log(kthLargest.add(5));   // return 5
-console.log(kthLargest.add(10));  // return 5
-console.log(kthLargest.add(9));   // return 8
-console.log(kthLargest.add(4));   // return 8
+let kthLargest = new KthLargest(3, [4,5,8,2]);
+console.log(kthLargest.add(3));// return 4
+console.log(kthLargest.add(5)); // return 5
+console.log(kthLargest.add(10)); // return 5
+console.log(kthLargest.add(9)); // return 8
+console.log(kthLargest.add(4)); // return 8
